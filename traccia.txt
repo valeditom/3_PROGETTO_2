@@ -1,0 +1,41 @@
+Machine Learning
+Progetto 2
+Il dataset Linnerud presenta un problema di regressione Multi-Target (3 target
+totali: Weight, Waist, Pulse).
+Addestrare e confrontare alcuni modelli di regressione sul dataset, riducendo il
+problema da Multi-Target a Single-Target tramite
+1. PCA
+2. selezione manuale di un singolo target
+1 Data Exploration & Preprocessing
+• Caricamento e Analisi del dataset e fornire un’analisi descrittiva iniziale
+(i.e. df.describe())
+• Standardization delle feature (X) per garantire che tutti gli attributi
+abbiano media zero e deviazione standard unitaria
+2 Target Engineering
+Trasformare il problema Multi-Target in due distinti problemi Single-Target da
+confrontare:
+• PCA (Target Composto)
+– Applicare la PCA alla matrice dei target standardizzata e mantenere
+PC1
+• Manuale (Target Selezionato)
+– Selezionare il target Waist dalla matrice dei target standardizzata
+come singolo target rappresentativo
+1
+3 Addestramento & Valutazione
+Addestrare i tre modelli di regressione (Linear Regression, Ridge, Lasso) su
+entrambi gli scenari di target ridotto con PCA e selezione manuale, utilizzando
+il set di feature completo e standardizzato:
+• Definire e inizializzare i tre modelli di regressione (Lineare, Ridge con
+α = 1.0, Lasso con α = 0.1)
+• Eseguire l’addestramento su tutto il dataset per entrambi gli scenari
+• Valutare e memorizzare i risultati come Mean Squared Error e R2 Score
+per ogni combinazione di modello e scenario
+4 Analisi & Visualizzazione
+• Applicare la PCA al set di feature standardizzato e mantenere le due
+componenti principali PC1 e PC2 per la visualizzazione 2D
+• Creare un grafico di dispersione in cui:
+– L’asse X `e il PC1 delle Feature
+– L’asse Y `e la PCA con n components=1
+– Tracciare le tre rette di regressione (Lineare, Ridge, Lasso) ri-addestrate
+sulla sola PC1 delle Feature, includendo il loro rispettivo R2 Score
+finale nell’etichetta
